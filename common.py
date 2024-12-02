@@ -35,8 +35,8 @@ def flush_logger():
 # 常数
 SITE_CONST = {
     "dic":{
-        "domain": "dicmusic.club",
-        "tracker": "tracker.dicmusic.club",
+        "domain": "dicmusic.com",
+        "tracker": "tracker.dicmusic.com",
         "source": "DICMusic",
     },
     "red":{

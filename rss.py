@@ -45,7 +45,7 @@ def get_name(raw):
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
 logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
 try:
-    resp = requests.get("https://dicmusic.club/ajax.php?action=notifications", cookies=COOKIES, timeout=10)
+    resp = requests.get("https://dicmusic.com/ajax.php?action=notifications", cookies=COOKIES, timeout=10)
     tlist = json.loads(resp.text)["response"]["results"]
 except:
     logging.info("fail to read from RSS url")
@@ -65,7 +65,7 @@ cnt = 0
 now = time.time()
 for t in tlist[:10]:
     tid = t["torrentId"]
-    dl_url_raw = "https://dicmusic.club/torrents.php?action=download&id={}&authkey={}&torrent_pass={}".format(tid, AUTHKEY, TORRENT_PASS)
+    dl_url_raw = "https://dicmusic.com/torrents.php?action=download&id={}&authkey={}&torrent_pass={}".format(tid, AUTHKEY, TORRENT_PASS)
     if dl_url_raw in downloaded:
         continue
     if t["size"] > FL_THRESHOLD:

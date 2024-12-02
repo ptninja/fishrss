@@ -223,12 +223,12 @@ class DICApi(GazelleApi):
             apiname="dic",
             headers=FISH_HEADERS,
             timer=Timer(5, 10.5),
-            api_url="https://dicmusic.club/ajax.php",
+            api_url="https://dicmusic.com/ajax.php",
             **kwargs
         )
 
     def get_dl_url(self, tid):
-        return "https://dicmusic.club/torrents.php?action=download&id={}&authkey={}&torrent_pass={}".format(
+        return "https://dicmusic.com/torrents.php?action=download&id={}&authkey={}&torrent_pass={}".format(
             tid, self.authkey, self.torrent_pass)
 
 class SnakeApi(GazelleApi):
